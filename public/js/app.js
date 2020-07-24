@@ -4,7 +4,7 @@ console.log('Client side javascript file is loaded!')
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
 
-    fetch('http://localhost:3000/weather?address='+document.querySelector('input').value).then((response) => {
+    fetch('/weather?address='+document.querySelector('input').value).then((response) => {
         response.json().then((data) => {
 
             if(data.error){

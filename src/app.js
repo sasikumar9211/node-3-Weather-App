@@ -8,7 +8,7 @@ const fetch = require( 'node-fetch');
 const public_directory = path.join(__dirname,'../public');
 const views_path = path.join(__dirname,'../templates/views');
 const partialPath = path.join(__dirname,'../templates/partials');
-
+const port = process.env.PORT || 3000
 
 
 
@@ -115,18 +115,10 @@ app.get('*',(req,res) => {
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('Server started....')
+app.listen(port, ()=>{
+    console.log('Server started....',port)
 })
 
-
-
-fetch('https://puzzle.mead.io/puzzle').then((response) => {
-
-    response.json().then((data) => {
-         console.log(data);
-    })
-})
 
 
 
